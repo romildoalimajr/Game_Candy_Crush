@@ -43,6 +43,12 @@ public class Tabuleiro {
 					g.setColor(Color.YELLOW);
 					g.fillRect(x * 48 + 12, y * 48 + 12, 25, 25);
 				}
+				if(Game.selected) {
+					int posX = Game.previousx/48;
+					int posY = Game.previousy/48;
+					g.setColor(Color.black);
+					g.drawRect(posX*48, posY*48, 48, 48);
+				}
 			}
 		}
 	}
