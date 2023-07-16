@@ -44,7 +44,7 @@ public class Game extends Canvas implements Runnable, MouseMotionListener, Mouse
 		Game game = new Game();
 		frame.add(game);
 		frame.setResizable(false);
-		;
+
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 
@@ -64,14 +64,13 @@ public class Game extends Canvas implements Runnable, MouseMotionListener, Mouse
 
 			if ((posX2 == posX1 + 1 || posX2 == posX1 - 1) && posY2 == posY1 || posY2 == posY1 - 1
 					|| posY2 == posY1 + 1) {
-				/*
-				//evitar movimentos diagonais
-				if((posX2 == posX1 + 1 || posX2 == posX1 - 1) &&
-						(posY2 == posY1 + 1 || posY2 == posY1 - 1)) {
-					System.out.println("não pode mover");
+/*
+				// evitar movimentos diagonais
+				if ((posX2 >= posX1 + 1 || posX2 <= posX1 - 1) && (posY2 >= posY1 + 1 || posY2 <= posY1 - 1)) {
+					// System.out.println("não pode mover");
 					return;
 				}
-				*/
+*/
 				int val1 = Tabuleiro.TABULEIRO[posX2][posY2];
 				int val2 = Tabuleiro.TABULEIRO[posX1][posY1];
 
@@ -82,12 +81,12 @@ public class Game extends Canvas implements Runnable, MouseMotionListener, Mouse
 				Game.nextY = -1;
 				Game.selected = false;
 				System.out.println("moveu");
-				
+
 			} else {
-				System.out.println("não pode mover");
+				// System.out.println("não pode mover");
 			}
 		} else {
-			System.out.println("não pode de jeito nenhum mover");
+			// System.out.println("não pode de jeito nenhum mover");
 		}
 	}
 
